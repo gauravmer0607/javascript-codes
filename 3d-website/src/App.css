@@ -1,0 +1,65 @@
+/* Fullscreen layout for 3D scene + overlay */
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.canvas-wrap,
+.r3f-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none; /* allow orbit controls */
+}
+
+.overlay-inner {
+  pointer-events: auto;
+  text-align: center;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, #000 55%, transparent);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+.brand {
+  margin: 0 0 0.25rem 0;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+.tagline {
+  margin: 0 0 1rem 0;
+  color: #c9c9c9;
+}
+
+.cta-row {
+  display: inline-flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn.primary {
+  background: #7aa2ff;
+  color: #0f172a;
+}
+.btn.ghost {
+  border: 1px solid #3b3b3b;
+  color: #e5e7eb;
+}
